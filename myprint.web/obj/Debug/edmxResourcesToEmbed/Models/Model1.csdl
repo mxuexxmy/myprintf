@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PrintingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tb_order_day">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="stats_day" Type="DateTime" Precision="3" />
+    <Property Name="print_number" Type="Int32" />
+    <Property Name="total_amount" Type="Double" />
+    <Property Name="create_time" Type="DateTime" Precision="3" />
+    <Property Name="update_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tb_order_month">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="stats_month" Type="DateTime" Precision="3" />
+    <Property Name="print_number" Type="Int32" />
+    <Property Name="total_amount" Type="Double" />
+    <Property Name="create_time" Type="DateTime" Precision="3" />
+    <Property Name="update_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tb_order_year">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="stats_year" Type="DateTime" Precision="3" />
+    <Property Name="print_number" Type="Int32" />
+    <Property Name="total_amount" Type="Double" />
+    <Property Name="create_time" Type="DateTime" Precision="3" />
+    <Property Name="update_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tb_print_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="user_qq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="user_wxchat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="user_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="print_file_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="prinf_number" Type="Int32" />
+    <Property Name="paper_number" Type="Int32" />
+    <Property Name="amount" Type="Double" />
+    <Property Name="total_amount" Type="Double" />
+    <Property Name="note" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="order_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="create_time" Type="DateTime" Precision="3" />
+    <Property Name="update_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tb_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" />
+    <Property Name="user_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="user_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="user_type" Type="Int32" />
+    <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="create_time" Type="DateTime" Precision="3" />
+    <Property Name="update_time" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="PrintingEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tb_order_day" EntityType="Self.tb_order_day" />
+    <EntitySet Name="tb_order_month" EntityType="Self.tb_order_month" />
+    <EntitySet Name="tb_order_year" EntityType="Self.tb_order_year" />
+    <EntitySet Name="tb_print_order" EntityType="Self.tb_print_order" />
+    <EntitySet Name="tb_user" EntityType="Self.tb_user" />
+  </EntityContainer>
+</Schema>

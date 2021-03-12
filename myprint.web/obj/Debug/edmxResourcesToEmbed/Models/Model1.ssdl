@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PrintingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tb_order_day">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="stats_day" Type="datetime" />
+    <Property Name="print_number" Type="int" />
+    <Property Name="total_amount" Type="float" />
+    <Property Name="create_time" Type="datetime" />
+    <Property Name="update_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tb_order_month">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="stats_month" Type="datetime" />
+    <Property Name="print_number" Type="int" />
+    <Property Name="total_amount" Type="float" />
+    <Property Name="create_time" Type="datetime" />
+    <Property Name="update_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tb_order_year">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="stats_year" Type="datetime" />
+    <Property Name="print_number" Type="int" />
+    <Property Name="total_amount" Type="float" />
+    <Property Name="create_time" Type="datetime" />
+    <Property Name="update_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tb_print_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="user_name" Type="varchar" MaxLength="50" />
+    <Property Name="user_qq" Type="varchar" MaxLength="50" />
+    <Property Name="user_wxchat" Type="varchar" MaxLength="50" />
+    <Property Name="user_phone" Type="varchar" MaxLength="50" />
+    <Property Name="print_file_name" Type="varchar" MaxLength="50" />
+    <Property Name="prinf_number" Type="int" />
+    <Property Name="paper_number" Type="int" />
+    <Property Name="amount" Type="float" />
+    <Property Name="total_amount" Type="float" />
+    <Property Name="note" Type="varchar" MaxLength="255" />
+    <Property Name="order_status" Type="varchar" MaxLength="50" />
+    <Property Name="address" Type="varchar" MaxLength="255" />
+    <Property Name="create_time" Type="datetime" />
+    <Property Name="update_time" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tb_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="user_name" Type="varchar" MaxLength="255" />
+    <Property Name="password" Type="varchar" MaxLength="255" />
+    <Property Name="user_phone" Type="varchar" MaxLength="20" />
+    <Property Name="user_type" Type="int" />
+    <Property Name="address" Type="varchar" MaxLength="255" />
+    <Property Name="create_time" Type="datetime" />
+    <Property Name="update_time" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="PrintingModelStoreContainer">
+    <EntitySet Name="tb_order_day" EntityType="Self.tb_order_day" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_order_month" EntityType="Self.tb_order_month" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_order_year" EntityType="Self.tb_order_year" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_print_order" EntityType="Self.tb_print_order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_user" EntityType="Self.tb_user" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

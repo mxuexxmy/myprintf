@@ -1,0 +1,16 @@
+E:\University\net\myprint\myprint.BLL\bin\Debug\myprint.BLL.dll
+E:\University\net\myprint\myprint.BLL\bin\Debug\myprint.BLL.pdb
+E:\University\net\myprint\myprint.BLL\bin\Debug\myprint.dal.dll
+E:\University\net\myprint\myprint.BLL\bin\Debug\myprint.Entity.dll
+E:\University\net\myprint\myprint.BLL\bin\Debug\EntityFramework.dll
+E:\University\net\myprint\myprint.BLL\bin\Debug\myprint.dal.pdb
+E:\University\net\myprint\myprint.BLL\bin\Debug\myprint.dal.dll.config
+E:\University\net\myprint\myprint.BLL\bin\Debug\myprint.Entity.pdb
+E:\University\net\myprint\myprint.BLL\bin\Debug\myprint.Entity.dll.config
+E:\University\net\myprint\myprint.BLL\bin\Debug\EntityFramework.xml
+E:\University\net\myprint\myprint.BLL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\University\net\myprint\myprint.BLL\obj\Debug\myprint.BLL.csprojAssemblyReference.cache
+E:\University\net\myprint\myprint.BLL\obj\Debug\myprint.BLL.csproj.CoreCompileInputs.cache
+E:\University\net\myprint\myprint.BLL\obj\Debug\myprint.BLL.csproj.CopyComplete
+E:\University\net\myprint\myprint.BLL\obj\Debug\myprint.BLL.dll
+E:\University\net\myprint\myprint.BLL\obj\Debug\myprint.BLL.pdb

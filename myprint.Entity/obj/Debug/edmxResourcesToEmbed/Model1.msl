@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PrintingModelStoreContainer" CdmEntityContainer="PrintingEntities">
+    <EntitySetMapping Name="tb_order_month">
+      <EntityTypeMapping TypeName="PrintingModel.OrderMonth">
+        <MappingFragment StoreEntitySet="tb_order_month">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="stats_month" ColumnName="stats_month" />
+          <ScalarProperty Name="print_number" ColumnName="print_number" />
+          <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_order_year">
+      <EntityTypeMapping TypeName="PrintingModel.OrderYear">
+        <MappingFragment StoreEntitySet="tb_order_year">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="stats_year" ColumnName="stats_year" />
+          <ScalarProperty Name="print_number" ColumnName="print_number" />
+          <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_print_order">
+      <EntityTypeMapping TypeName="PrintingModel.PrintOrder">
+        <MappingFragment StoreEntitySet="tb_print_order">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="user_qq" ColumnName="user_qq" />
+          <ScalarProperty Name="user_wxchat" ColumnName="user_wxchat" />
+          <ScalarProperty Name="user_phone" ColumnName="user_phone" />
+          <ScalarProperty Name="print_file_name" ColumnName="print_file_name" />
+          <ScalarProperty Name="prinf_number" ColumnName="prinf_number" />
+          <ScalarProperty Name="paper_number" ColumnName="paper_number" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="order_status" ColumnName="order_status" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_user">
+      <EntityTypeMapping TypeName="PrintingModel.User">
+        <MappingFragment StoreEntitySet="tb_user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="user_phone" ColumnName="user_phone" />
+          <ScalarProperty Name="user_type" ColumnName="user_type" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_order_day">
+      <EntityTypeMapping TypeName="PrintingModel.OrderDay">
+        <MappingFragment StoreEntitySet="tb_order_day">
+          <ScalarProperty Name="update_time" ColumnName="update_time" />
+          <ScalarProperty Name="create_time" ColumnName="create_time" />
+          <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+          <ScalarProperty Name="print_number" ColumnName="print_number" />
+          <ScalarProperty Name="stats_day" ColumnName="stats_day" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

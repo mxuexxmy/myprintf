@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PrintingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tb_order_day">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="stats_day" Type="datetime" />
+          <Property Name="print_number" Type="int" />
+          <Property Name="total_amount" Type="float" />
+          <Property Name="create_time" Type="datetime" />
+          <Property Name="update_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_order_month">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="stats_month" Type="datetime" />
+          <Property Name="print_number" Type="int" />
+          <Property Name="total_amount" Type="float" />
+          <Property Name="create_time" Type="datetime" />
+          <Property Name="update_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_order_year">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="stats_year" Type="datetime" />
+          <Property Name="print_number" Type="int" />
+          <Property Name="total_amount" Type="float" />
+          <Property Name="create_time" Type="datetime" />
+          <Property Name="update_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_print_order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="user_name" Type="varchar" MaxLength="50" />
+          <Property Name="user_qq" Type="varchar" MaxLength="50" />
+          <Property Name="user_wxchat" Type="varchar" MaxLength="50" />
+          <Property Name="user_phone" Type="varchar" MaxLength="50" />
+          <Property Name="print_file_name" Type="varchar" MaxLength="50" />
+          <Property Name="prinf_number" Type="int" />
+          <Property Name="paper_number" Type="int" />
+          <Property Name="amount" Type="float" />
+          <Property Name="total_amount" Type="float" />
+          <Property Name="note" Type="varchar" MaxLength="255" />
+          <Property Name="order_status" Type="varchar" MaxLength="50" />
+          <Property Name="address" Type="varchar" MaxLength="255" />
+          <Property Name="create_time" Type="datetime" />
+          <Property Name="update_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tb_user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="user_name" Type="varchar" MaxLength="255" />
+          <Property Name="password" Type="varchar" MaxLength="255" />
+          <Property Name="user_phone" Type="varchar" MaxLength="20" />
+          <Property Name="user_type" Type="int" />
+          <Property Name="address" Type="varchar" MaxLength="255" />
+          <Property Name="create_time" Type="datetime" />
+          <Property Name="update_time" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="PrintingModelStoreContainer">
+          <EntitySet Name="tb_order_day" EntityType="Self.tb_order_day" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_order_month" EntityType="Self.tb_order_month" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_order_year" EntityType="Self.tb_order_year" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_print_order" EntityType="Self.tb_print_order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tb_user" EntityType="Self.tb_user" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PrintingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="OrderMonth">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="stats_month" Type="DateTime" Precision="3" />
+          <Property Name="print_number" Type="Int32" />
+          <Property Name="total_amount" Type="Double" />
+          <Property Name="create_time" Type="DateTime" Precision="3" />
+          <Property Name="update_time" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OrderYear">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="stats_year" Type="DateTime" Precision="3" />
+          <Property Name="print_number" Type="Int32" />
+          <Property Name="total_amount" Type="Double" />
+          <Property Name="create_time" Type="DateTime" Precision="3" />
+          <Property Name="update_time" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PrintOrder">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_qq" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_wxchat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="print_file_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="prinf_number" Type="Int32" />
+          <Property Name="paper_number" Type="Int32" />
+          <Property Name="amount" Type="Double" />
+          <Property Name="total_amount" Type="Double" />
+          <Property Name="note" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="order_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="create_time" Type="DateTime" Precision="3" />
+          <Property Name="update_time" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="user_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="user_phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="user_type" Type="Int32" />
+          <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="create_time" Type="DateTime" Precision="3" />
+          <Property Name="update_time" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="PrintingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tb_order_month" EntityType="PrintingModel.OrderMonth" />
+          <EntitySet Name="tb_order_year" EntityType="PrintingModel.OrderYear" />
+          <EntitySet Name="tb_print_order" EntityType="PrintingModel.PrintOrder" />
+          <EntitySet Name="tb_user" EntityType="PrintingModel.User" />
+          <EntitySet Name="tb_order_day" EntityType="PrintingModel.OrderDay" />
+        </EntityContainer>
+        <EntityType Name="OrderDay">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="stats_day" Type="DateTime" Precision="3" />
+          <Property Name="print_number" Type="Int32" />
+          <Property Name="total_amount" Type="Double" />
+          <Property Name="create_time" Type="DateTime" Precision="3" />
+          <Property Name="update_time" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PrintingModelStoreContainer" CdmEntityContainer="PrintingEntities">
+          <EntitySetMapping Name="tb_order_month">
+            <EntityTypeMapping TypeName="PrintingModel.OrderMonth">
+              <MappingFragment StoreEntitySet="tb_order_month">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="stats_month" ColumnName="stats_month" />
+                <ScalarProperty Name="print_number" ColumnName="print_number" />
+                <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="update_time" ColumnName="update_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_order_year">
+            <EntityTypeMapping TypeName="PrintingModel.OrderYear">
+              <MappingFragment StoreEntitySet="tb_order_year">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="stats_year" ColumnName="stats_year" />
+                <ScalarProperty Name="print_number" ColumnName="print_number" />
+                <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="update_time" ColumnName="update_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_print_order">
+            <EntityTypeMapping TypeName="PrintingModel.PrintOrder">
+              <MappingFragment StoreEntitySet="tb_print_order">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="user_qq" ColumnName="user_qq" />
+                <ScalarProperty Name="user_wxchat" ColumnName="user_wxchat" />
+                <ScalarProperty Name="user_phone" ColumnName="user_phone" />
+                <ScalarProperty Name="print_file_name" ColumnName="print_file_name" />
+                <ScalarProperty Name="prinf_number" ColumnName="prinf_number" />
+                <ScalarProperty Name="paper_number" ColumnName="paper_number" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="order_status" ColumnName="order_status" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="update_time" ColumnName="update_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_user">
+            <EntityTypeMapping TypeName="PrintingModel.User">
+              <MappingFragment StoreEntitySet="tb_user">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="user_phone" ColumnName="user_phone" />
+                <ScalarProperty Name="user_type" ColumnName="user_type" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="update_time" ColumnName="update_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tb_order_day">
+            <EntityTypeMapping TypeName="PrintingModel.OrderDay">
+              <MappingFragment StoreEntitySet="tb_order_day">
+                <ScalarProperty Name="update_time" ColumnName="update_time" />
+                <ScalarProperty Name="create_time" ColumnName="create_time" />
+                <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+                <ScalarProperty Name="print_number" ColumnName="print_number" />
+                <ScalarProperty Name="stats_day" ColumnName="stats_day" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

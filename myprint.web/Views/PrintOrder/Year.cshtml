@@ -1,0 +1,225 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>荣荣打印 | 月记录</title>
+    <!-- 告诉浏览器该页面是自适应布局 -->
+    <meta content="wnameth=device-wnameth, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="shortcut icon" href="~/favicon.ico">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="~/Content/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Content/bower_components/font-awesome/css/font-awesome.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="~/Content/bower_components/Ionicons/css/ionicons.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/css/AdminLTE.min.css">
+    <!-- AdminLTE 皮肤。
+         从 css/skins 目录下选择一个皮肤，以减少负载，而不是下载所有皮肤。 -->
+    <link rel="stylesheet" href="~/Content/css/skins/_all-skins.min.css">
+</head>
+<body class="hold-transition skin-blue layout-top-nav">
+    <div class="wrapper">
+
+        <header class="main-header">
+            <nav class="navbar navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a href="/index" class="navbar-brand">荣荣打印</a>
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="/index">记录打印<span class="sr-only">（当前）</span></a></li>
+                            <li class="active"><a href="/printorder">打印统计</a></li>
+                            <li><a href="/timingstatistics">定时统计</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Navbar Right Menu -->
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <!-- User Account Menu -->
+                            <li class="dropdown user user-menu">
+                                <!-- Menu Toggle Button -->
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <!-- The user image in the navbar-->
+                                    <img src="~/img/user2-160x160.jpg" class="user-image" alt="用户图像">
+                                    <!-- hidden-xs 在小型设备上隐藏用户名，只显示图像。 -->
+                                    <span class="hidden-xs"> @Session["userName"] </span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- The user image in the menu -->
+                                    <li class="user-header">
+                                        <img src="~/img/user2-160x160.jpg" class="img-circle" alt="用户图像">
+                                        <p>
+                                            @Session["userName"]
+                                            <small>注册于 @Session["createTime"]</small>
+                                        </p>
+                                    </li>
+                                    <!-- Menu Body -->
+                                    <!-- Menu Footer-->
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <a href="/profile" class="btn btn-default btn-flat">资料</a>
+                                        </div>
+                                        <div class="pull-right">
+                                            <a href="/login/logout" class="btn btn-default btn-flat">退出</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-custom-menu -->
+                </div>
+            </nav>
+        </header>
+        <!-- Full Wnameth Column -->
+        <div class="content-wrapper">
+            <div class="container">
+                <!-- Content Header (页眉) -->
+                <section class="content-header">
+                    <h1>
+                        打印统计
+                        <small>年记录</small>
+                    </h1>
+                </section>
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-default">
+                        <div class="box-header">
+                            <a class="btn btn-app" href="/printorder">
+                                <i class="fa  fa-bar-chart control-label"></i> 打印记录
+                            </a>
+                            <a class="btn btn-app" href="/printorder/day">
+                                <i class="fa  fa-bar-chart control-label"></i> 日记录
+                            </a>
+                            <a class="btn btn-app" href="/printorder/month">
+                                <i class="fa  fa-bar-chart control-label"></i> 月记录
+                            </a>
+                            <a class="btn btn-app" href="/printorder/year">
+                                <i class="fa  fa-bar-chart control-label"></i> 年记录
+                            </a>
+                        </div>
+
+                        @if (ViewBag.Message != null)
+                        {
+                            <div class="alert alert-danger alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <strong>@ViewBag.Message</strong>
+                            </div>
+                        }
+
+                        <div class="box-body">
+                            <table id="dataTable" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>编号</th>
+                                        <th>年</th>
+                                        <th>份数</th>
+                                        <th>金额</th>
+                                        <th>更新时间</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- /.box -->
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="pull-right hnameden-xs">
+                    <b>Version</b> 1.0.0
+                </div>
+                <strong>Copyright &copy; 2020-2021 <a href="/about">荣荣打印</a>.</strong> All rights
+                reserved.
+            </div>
+            <!-- /.container -->
+        </footer>
+    </div>
+    <!-- ./wrapper -->
+    <!-- jQuery 3 -->
+    <script src="~/Content/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="~/Content/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- SlimScroll -->
+    <script src="~/Content/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="~/Content/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Scripts/js/adminlte.min.js"></script>
+    <!-- iCheck 1.0.1 -->
+    <script src="~/Scripts/plugins/iCheck/icheck.min.js"></script>
+    <!-- DataTables -->
+    <script src="~/Content/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/Scripts/js/demo.js"></script>
+    <script src="~/Scripts/app/app.js"></script>
+
+
+    <script>
+        var _dataTable;
+
+        $(function () {
+            var _columns = [
+                { "data": "id" },
+                {
+                    "data": function (row, type, val, meta) {
+                        var date = row.stats_year;
+                        if (date != null) {
+                            var newDate = new Date(parseInt(date.replace("/Date(", "").replace(")/", ""), 10));
+                            //月份为0-11，所以+1，月份小于10时补个0
+                            var month = newDate.getMonth() + 1 < 10 ? "0" + (newDate.getMonth() + 1) : newDate.getMonth() + 1;
+                            return newDate.getFullYear();
+                        }
+                    }
+                },
+                { "data": "print_number" },
+                { "data": "total_amount" },
+                {
+                    "data": function (row, type, val, meta) {
+                        var date = row.update_time;
+                        if (date != null) {
+                            var newDate = new Date(parseInt(date.replace("/Date(", "").replace(")/", ""), 10));
+                            //月份为0-11，所以+1，月份小于10时补个0
+                            var month = newDate.getMonth() + 1 < 10 ? "0" + (newDate.getMonth() + 1) : newDate.getMonth() + 1;
+                            var currentDate = newDate.getDate() < 10 ? "0" + newDate.getDate() : newDate.getDate();
+                            var hour = newDate.getHours() < 10 ? "0" + newDate.getHours() : newDate.getHours();
+                            var minut = newDate.getMinutes() < 10 ? "0" + newDate.getMinutes() : newDate.getMinutes();
+                            return newDate.getFullYear() + "-" + month + "-" + currentDate + " " + hour + ":" + minut;
+                        }
+                    }
+                },
+                {
+                    "data": function (row, type, val, meta) {
+                        return '<a type="button"   href="/printorder/UpdateYear?id=' + row.id + '"  class="btn btn-sm btn-default" ><i class="fa  fa-refresh"></i>更新</a>&nbsp;&nbsp;&nbsp;'
+
+                    }
+                }
+            ];
+
+            _dataTable = App.initDataTables("/printorder/yearpage", _columns);
+        });
+
+    </script>
+</body>
+</html>

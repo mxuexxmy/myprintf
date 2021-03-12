@@ -1,0 +1,16 @@
+E:\University\net\myprint\myprint.dal\bin\Debug\myprint.dal.dll.config
+E:\University\net\myprint\myprint.dal\bin\Debug\myprint.dal.dll
+E:\University\net\myprint\myprint.dal\bin\Debug\myprint.dal.pdb
+E:\University\net\myprint\myprint.dal\bin\Debug\EntityFramework.dll
+E:\University\net\myprint\myprint.dal\bin\Debug\EntityFramework.SqlServer.dll
+E:\University\net\myprint\myprint.dal\bin\Debug\myprint.Entity.dll
+E:\University\net\myprint\myprint.dal\bin\Debug\myprint.Entity.pdb
+E:\University\net\myprint\myprint.dal\bin\Debug\myprint.Entity.dll.config
+E:\University\net\myprint\myprint.dal\bin\Debug\EntityFramework.xml
+E:\University\net\myprint\myprint.dal\bin\Debug\EntityFramework.SqlServer.xml
+E:\University\net\myprint\myprint.dal\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\University\net\myprint\myprint.dal\obj\Debug\myprint.DAL.csprojAssemblyReference.cache
+E:\University\net\myprint\myprint.dal\obj\Debug\myprint.DAL.csproj.CoreCompileInputs.cache
+E:\University\net\myprint\myprint.dal\obj\Debug\myprint.DAL.csproj.CopyComplete
+E:\University\net\myprint\myprint.dal\obj\Debug\myprint.dal.dll
+E:\University\net\myprint\myprint.dal\obj\Debug\myprint.dal.pdb

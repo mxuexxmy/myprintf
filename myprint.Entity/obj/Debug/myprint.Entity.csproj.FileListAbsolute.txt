@@ -1,0 +1,13 @@
+E:\University\net\myprint\myprint.Entity\bin\Debug\myprint.Entity.dll.config
+E:\University\net\myprint\myprint.Entity\bin\Debug\myprint.Entity.dll
+E:\University\net\myprint\myprint.Entity\bin\Debug\myprint.Entity.pdb
+E:\University\net\myprint\myprint.Entity\bin\Debug\EntityFramework.dll
+E:\University\net\myprint\myprint.Entity\bin\Debug\EntityFramework.SqlServer.dll
+E:\University\net\myprint\myprint.Entity\bin\Debug\EntityFramework.xml
+E:\University\net\myprint\myprint.Entity\bin\Debug\EntityFramework.SqlServer.xml
+E:\University\net\myprint\myprint.Entity\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\University\net\myprint\myprint.Entity\obj\Debug\myprint.Entity.csproj.CoreCompileInputs.cache
+E:\University\net\myprint\myprint.Entity\obj\Debug\myprint.Entity.csproj.CopyComplete
+E:\University\net\myprint\myprint.Entity\obj\Debug\myprint.Entity.dll
+E:\University\net\myprint\myprint.Entity\obj\Debug\myprint.Entity.pdb
+E:\University\net\myprint\myprint.Entity\obj\Debug\myprint.Entity.csprojAssemblyReference.cache
